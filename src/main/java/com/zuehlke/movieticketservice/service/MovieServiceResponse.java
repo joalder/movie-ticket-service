@@ -3,7 +3,6 @@ package com.zuehlke.movieticketservice.service;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-// Class for converting json string to a java object
 public class MovieServiceResponse {
 
 	private final long id;

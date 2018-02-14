@@ -13,8 +13,8 @@ import org.springframework.web.bind.annotation.RestController;
 import com.zuehlke.movieticketservice.model.Movie;
 import com.zuehlke.movieticketservice.model.MovieDetail;
 import com.zuehlke.movieticketservice.model.Rating;
-import com.zuehlke.movieticketservice.service.RatingAdapter;
 import com.zuehlke.movieticketservice.service.MovieServiceAdapter;
+import com.zuehlke.movieticketservice.service.RatingAdapter;
 
 @RestController
 @RequestMapping("api/v1")
