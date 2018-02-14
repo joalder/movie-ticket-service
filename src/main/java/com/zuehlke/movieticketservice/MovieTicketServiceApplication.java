@@ -7,9 +7,9 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 
-import com.zuehlke.movieticketservice.domain.Movie;
-import com.zuehlke.movieticketservice.domain.MovieDetails;
-import com.zuehlke.movieticketservice.domain.Rating;
+import com.zuehlke.movieticketservice.model.Movie;
+import com.zuehlke.movieticketservice.model.MovieDetails;
+import com.zuehlke.movieticketservice.model.Rating;
 import com.zuehlke.movieticketservice.repository.MovieRepository;
 
 @SpringBootApplication

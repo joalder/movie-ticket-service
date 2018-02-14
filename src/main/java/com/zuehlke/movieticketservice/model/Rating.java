@@ -1,4 +1,4 @@
-package com.zuehlke.movieticketservice.domain;
+package com.zuehlke.movieticketservice.model;
 
 public class Rating {
 	private String source;

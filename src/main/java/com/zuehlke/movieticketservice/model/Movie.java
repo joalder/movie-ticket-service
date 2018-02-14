@@ -1,4 +1,4 @@
-package com.zuehlke.movieticketservice.domain;
+package com.zuehlke.movieticketservice.model;
 
 public class Movie {
 	private long id;

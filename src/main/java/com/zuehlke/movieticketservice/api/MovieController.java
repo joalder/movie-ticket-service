@@ -8,8 +8,8 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.zuehlke.movieticketservice.domain.Movie;
-import com.zuehlke.movieticketservice.domain.MovieDetails;
+import com.zuehlke.movieticketservice.model.Movie;
+import com.zuehlke.movieticketservice.model.MovieDetails;
 import com.zuehlke.movieticketservice.repository.MovieRepository;
 
 @RestController

@@ -5,8 +5,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import com.zuehlke.movieticketservice.domain.Movie;
-import com.zuehlke.movieticketservice.domain.MovieDetails;
+import com.zuehlke.movieticketservice.model.Movie;
+import com.zuehlke.movieticketservice.model.MovieDetails;
 
 public class MovieRepository {
 

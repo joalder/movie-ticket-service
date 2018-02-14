@@ -1,4 +1,4 @@
-package com.zuehlke.movieticketservice.domain;
+package com.zuehlke.movieticketservice.model;
 
 import java.util.List;
 
