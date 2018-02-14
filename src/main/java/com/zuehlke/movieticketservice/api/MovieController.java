@@ -3,7 +3,6 @@ package com.zuehlke.movieticketservice.api;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.context.config.ResourceNotFoundException;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -14,7 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.zuehlke.movieticketservice.model.Movie;
 import com.zuehlke.movieticketservice.model.MovieDetail;
 import com.zuehlke.movieticketservice.model.Rating;
-import com.zuehlke.movieticketservice.service.MovieRatingAdapter;
+import com.zuehlke.movieticketservice.service.RatingAdapter;
 import com.zuehlke.movieticketservice.service.MovieServiceAdapter;
 
 @RestController
@@ -22,12 +21,12 @@ import com.zuehlke.movieticketservice.service.MovieServiceAdapter;
 public class MovieController {
 
 	private MovieServiceAdapter movieServiceAdapter;
-	private MovieRatingAdapter movieRatingAdapter;
+	private RatingAdapter ratingAdapter;
 
 	@Autowired
-	public MovieController(MovieServiceAdapter movieServiceAdapter, MovieRatingAdapter movieRatingAdapter) {
+	public MovieController(MovieServiceAdapter movieServiceAdapter, RatingAdapter ratingAdapter) {
 		this.movieServiceAdapter = movieServiceAdapter;
-		this.movieRatingAdapter = movieRatingAdapter;
+		this.ratingAdapter = ratingAdapter;
 	}
 
 	@GetMapping("movie")
@@ -40,7 +39,7 @@ public class MovieController {
 		MovieDetail movieDetail = movieServiceAdapter.getMovieById(id)
 				.orElseThrow(ResourceNotFound::new);
 
-		List<Rating> ratings = movieRatingAdapter.getRatingsById(id);
+		List<Rating> ratings = ratingAdapter.getRatingsById(id);
 		movieDetail.getRatings().addAll(ratings);
 
 		return movieDetail;

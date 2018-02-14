@@ -11,7 +11,7 @@ import com.zuehlke.movieticketservice.model.Movie;
 import com.zuehlke.movieticketservice.model.MovieDetail;
 import com.zuehlke.movieticketservice.model.Rating;
 import com.zuehlke.movieticketservice.repository.MovieRepository;
-import com.zuehlke.movieticketservice.service.MovieRatingAdapter;
+import com.zuehlke.movieticketservice.service.RatingAdapter;
 import com.zuehlke.movieticketservice.service.MovieServiceAdapter;
 
 @SpringBootApplication
@@ -33,8 +33,8 @@ public class MovieTicketServiceApplication {
 	}
 
 	@Bean
-	public MovieRatingAdapter createMovieRatingServiceAdapter() {
-		return new MovieRatingAdapter("https://movie-rating-service.herokuapp.com");
+	public RatingAdapter createMovieRatingServiceAdapter() {
+		return new RatingAdapter("https://movie-rating-service.herokuapp.com");
 	}
 
 

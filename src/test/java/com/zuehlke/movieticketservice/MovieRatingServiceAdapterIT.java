@@ -9,7 +9,7 @@ import java.util.List;
 import org.junit.Test;
 
 import com.zuehlke.movieticketservice.model.Rating;
-import com.zuehlke.movieticketservice.service.MovieRatingAdapter;
+import com.zuehlke.movieticketservice.service.RatingAdapter;
 
 public class MovieRatingServiceAdapterIT {
 
@@ -19,7 +19,7 @@ public class MovieRatingServiceAdapterIT {
 
 	@Test
 	public void getRatingsById() {
-		MovieRatingAdapter ratingAdapter = new MovieRatingAdapter("https://movie-rating-service.herokuapp.com");
+		RatingAdapter ratingAdapter = new RatingAdapter("https://movie-rating-service.herokuapp.com");
 
 		List<Rating> ratings = ratingAdapter.getRatingsById(1);
 

@@ -5,12 +5,12 @@ import java.util.stream.Collectors;
 
 import com.zuehlke.movieticketservice.model.Rating;
 
-public class MovieRatingAdapter {
+public class RatingAdapter {
 
-	private final MovieRatingServiceApiClient client;
+	private final RatingServiceApiClient client;
 
-	public MovieRatingAdapter(String url) {
-		client = RestClientFactory.createClient(url, MovieRatingServiceApiClient.class);
+	public RatingAdapter(String url) {
+		client = RestClientFactory.createClient(url, RatingServiceApiClient.class);
 	}
 
 	public List<Rating> getRatingsById(long id) {
