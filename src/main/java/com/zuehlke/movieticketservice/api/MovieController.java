@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.zuehlke.movieticketservice.model.Movie;
-import com.zuehlke.movieticketservice.model.MovieDetails;
+import com.zuehlke.movieticketservice.model.MovieDetail;
 import com.zuehlke.movieticketservice.repository.MovieRepository;
 
 @RestController
@@ -29,7 +29,7 @@ public class MovieController {
 	}
 
 	@GetMapping("movie/{id}")
-	public MovieDetails getMovies(@PathVariable int id) {
+	public MovieDetail getMovies(@PathVariable int id) {
 		return movieRepository.getMovieDetails(id);
 	}
 }

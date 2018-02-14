@@ -8,7 +8,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 
 import com.zuehlke.movieticketservice.model.Movie;
-import com.zuehlke.movieticketservice.model.MovieDetails;
+import com.zuehlke.movieticketservice.model.MovieDetail;
 import com.zuehlke.movieticketservice.model.Rating;
 import com.zuehlke.movieticketservice.repository.MovieRepository;
 
@@ -44,7 +44,7 @@ public class MovieTicketServiceApplication {
 		ratings.add(new Rating("Internet Movie Database", "8.3/10"));
 		ratings.add(new Rating("Rotten Tomatoes", "84%"));
 
-		MovieDetails movieDetails = new MovieDetails(1, "Batman Begins",
+		MovieDetail movieDetail = new MovieDetail(1, "Batman Begins",
 				"https://images-na.ssl-images-amazon"
 						+ ".com/images/M/MV5BNTM3OTc0MzM2OV5BMl5BanBnXkFtZTYwNzUwMTI3._V1_SX300.jpg",
 				"After training with his mentor, Batman begins his fight to free crime-ridden Gotham City from the "
@@ -53,7 +53,7 @@ public class MovieTicketServiceApplication {
 				"Action",
 				ratings);
 
-		movieRepository.addMovieDetails(movieDetails);
+		movieRepository.addMovieDetails(movieDetail);
 	}
 
 	public static void main(String[] args) {

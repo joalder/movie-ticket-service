@@ -2,7 +2,7 @@ package com.zuehlke.movieticketservice.model;
 
 import java.util.List;
 
-public class MovieDetails {
+public class MovieDetail {
 	private int id;
 	private String title;
 	private String poster;
@@ -11,7 +11,7 @@ public class MovieDetails {
 	private String genre;
 	private List<Rating> ratings;
 
-	public MovieDetails(int id, String title, String poster, String plot, int year, String genre, List<Rating>
+	public MovieDetail(int id, String title, String poster, String plot, int year, String genre, List<Rating>
 			ratings) {
 		this.id = id;
 		this.title = title;

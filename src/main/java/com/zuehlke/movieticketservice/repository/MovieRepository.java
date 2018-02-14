@@ -6,12 +6,12 @@ import java.util.List;
 import java.util.Map;
 
 import com.zuehlke.movieticketservice.model.Movie;
-import com.zuehlke.movieticketservice.model.MovieDetails;
+import com.zuehlke.movieticketservice.model.MovieDetail;
 
 public class MovieRepository {
 
 	private List<Movie> movies = new ArrayList<>();
-	private Map<Integer, MovieDetails> movieDetails = new HashMap<>();
+	private Map<Integer, MovieDetail> movieDetails = new HashMap<>();
 
 	public MovieRepository() {
 	}
@@ -24,12 +24,12 @@ public class MovieRepository {
 		this.movies.add(movie);
 	}
 
-	public MovieDetails getMovieDetails(int id) {
+	public MovieDetail getMovieDetails(int id) {
 		return this.movieDetails.get(id);
 	}
 
-	public void addMovieDetails(MovieDetails movieDetails) {
-		this.movieDetails.put(movieDetails.getId(), movieDetails);
+	public void addMovieDetails(MovieDetail movieDetail) {
+		this.movieDetails.put(movieDetail.getId(), movieDetail);
 	}
 
 }

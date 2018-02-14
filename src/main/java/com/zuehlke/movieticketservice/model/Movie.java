@@ -1,5 +1,7 @@
 package com.zuehlke.movieticketservice.model;
 
+import java.util.Objects;
+
 public class Movie {
 	private long id;
 	private String title;
@@ -30,5 +32,25 @@ public class Movie {
 				", title='" + title + '\'' +
 				", poster='" + poster + '\'' +
 				'}';
+	}
+
+	@Override
+	public boolean equals(Object o) {
+		if (this == o) {
+			return true;
+		}
+		if (o == null || getClass() != o.getClass()) {
+			return false;
+		}
+		Movie movie = (Movie) o;
+		return id == movie.id &&
+				Objects.equals(title, movie.title) &&
+				Objects.equals(poster, movie.poster);
+	}
+
+	@Override
+	public int hashCode() {
+
+		return Objects.hash(id, title, poster);
 	}
 }
