@@ -13,6 +13,8 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.zuehlke.movieticketservice.model.Movie;
 import com.zuehlke.movieticketservice.model.MovieDetail;
+import com.zuehlke.movieticketservice.model.Rating;
+import com.zuehlke.movieticketservice.service.MovieRatingAdapter;
 import com.zuehlke.movieticketservice.service.MovieServiceAdapter;
 
 @RestController
@@ -20,10 +22,12 @@ import com.zuehlke.movieticketservice.service.MovieServiceAdapter;
 public class MovieController {
 
 	private MovieServiceAdapter movieServiceAdapter;
+	private MovieRatingAdapter movieRatingAdapter;
 
 	@Autowired
-	public MovieController(MovieServiceAdapter movieServiceAdapter) {
+	public MovieController(MovieServiceAdapter movieServiceAdapter, MovieRatingAdapter movieRatingAdapter) {
 		this.movieServiceAdapter = movieServiceAdapter;
+		this.movieRatingAdapter = movieRatingAdapter;
 	}
 
 	@GetMapping("movie")
@@ -33,8 +37,13 @@ public class MovieController {
 
 	@GetMapping("movie/{id}")
 	public MovieDetail getMovies(@PathVariable int id) {
-		return movieServiceAdapter.getMovieById(id)
+		MovieDetail movieDetail = movieServiceAdapter.getMovieById(id)
 				.orElseThrow(ResourceNotFound::new);
+
+		List<Rating> ratings = movieRatingAdapter.getRatingsById(id);
+		movieDetail.getRatings().addAll(ratings);
+
+		return movieDetail;
 	}
 
 	@ResponseStatus(value = HttpStatus.NOT_FOUND)
