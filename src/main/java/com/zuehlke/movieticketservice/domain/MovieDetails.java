@@ -3,7 +3,7 @@ package com.zuehlke.movieticketservice.domain;
 import java.util.List;
 
 public class MovieDetails {
-	private long id;
+	private int id;
 	private String title;
 	private String poster;
 	private String plot;
@@ -11,7 +11,8 @@ public class MovieDetails {
 	private String genre;
 	private List<Rating> ratings;
 
-	public MovieDetails(long id, String title, String poster, String plot, int year, String genre, List<Rating> ratings) {
+	public MovieDetails(int id, String title, String poster, String plot, int year, String genre, List<Rating>
+			ratings) {
 		this.id = id;
 		this.title = title;
 		this.poster = poster;
@@ -21,7 +22,7 @@ public class MovieDetails {
 		this.ratings = ratings;
 	}
 
-	public long getId() {
+	public int getId() {
 		return id;
 	}
 
