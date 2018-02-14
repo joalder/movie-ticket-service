@@ -3,9 +3,9 @@ package com.zuehlke.movieticketservice.model;
 import java.util.Objects;
 
 public class Movie {
-	private long id;
-	private String title;
-	private String poster;
+	private final long id;
+	private final String title;
+	private final String poster;
 
 	public Movie(long id, String title, String poster) {
 		this.id = id;

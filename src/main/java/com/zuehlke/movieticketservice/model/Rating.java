@@ -3,8 +3,8 @@ package com.zuehlke.movieticketservice.model;
 import java.util.Objects;
 
 public class Rating {
-	private String source;
-	private String value;
+	private final String source;
+	private final String value;
 
 	public Rating(String source, String value) {
 		this.source = source;

@@ -3,13 +3,13 @@ package com.zuehlke.movieticketservice.model;
 import java.util.List;
 
 public class MovieDetail {
-	private int id;
-	private String title;
-	private String poster;
-	private String plot;
-	private int year;
-	private String genre;
-	private List<Rating> ratings;
+	private final int id;
+	private final String title;
+	private final String poster;
+	private final String plot;
+	private final int year;
+	private final String genre;
+	private final List<Rating> ratings;
 
 	public MovieDetail(int id, String title, String poster, String plot, int year, String genre, List<Rating>
 			ratings) {
