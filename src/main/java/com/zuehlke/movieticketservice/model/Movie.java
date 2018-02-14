@@ -2,6 +2,8 @@ package com.zuehlke.movieticketservice.model;
 
 import java.util.Objects;
 
+import com.zuehlke.movieticketservice.service.MovieServiceResponse;
+
 public class Movie {
 	private final long id;
 	private final String title;
@@ -11,6 +13,13 @@ public class Movie {
 		this.id = id;
 		this.title = title;
 		this.poster = poster;
+	}
+
+	public static Movie from(MovieServiceResponse response) {
+		return new Movie(
+				response.getId(),
+				response.getTitle(),
+				response.getPoster());
 	}
 
 	public long getId() {

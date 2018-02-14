@@ -1,6 +1,9 @@
 package com.zuehlke.movieticketservice.model;
 
+import java.util.ArrayList;
 import java.util.List;
+
+import com.zuehlke.movieticketservice.service.MovieServiceResponse;
 
 public class MovieDetail {
 	private final int id;
@@ -20,6 +23,17 @@ public class MovieDetail {
 		this.year = year;
 		this.genre = genre;
 		this.ratings = ratings;
+	}
+
+	public static MovieDetail from(MovieServiceResponse response) {
+		return new MovieDetail(
+				(int) response.getId(),
+				response.getTitle(),
+				response.getPoster(),
+				response.getPlot(),
+				response.getYear(),
+				response.getGenre(),
+				new ArrayList<>());
 	}
 
 	public int getId() {

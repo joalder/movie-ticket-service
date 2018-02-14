@@ -21,7 +21,7 @@ public class MovieServiceAdapter {
 		List<MovieServiceResponse> movieServiceResponse = moviesApiClient.getMovies();
 
 		return movieServiceResponse.stream()
-				.map(response -> new Movie(response.getId(), response.getTitle(), response.getPoster()))
+				.map(Movie::from)
 				.collect(Collectors.toList());
 	}
 
@@ -33,17 +33,6 @@ public class MovieServiceAdapter {
 			return Optional.empty();
 		}
 
-		return Optional.of(responseToMovieDetail(response));
-	}
-
-	private MovieDetail responseToMovieDetail(MovieServiceResponse response) {
-		return new MovieDetail(
-				(int) response.getId(),
-				response.getTitle(),
-				response.getPoster(),
-				response.getPlot(),
-				response.getYear(),
-				response.getGenre(),
-				new ArrayList<>());
+		return Optional.of(MovieDetail.from(response));
 	}
 }

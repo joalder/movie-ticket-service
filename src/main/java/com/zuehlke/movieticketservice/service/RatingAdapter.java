@@ -15,7 +15,7 @@ public class RatingAdapter {
 
 	public List<Rating> getRatingsById(long id) {
 		return client.getRatingById(id).stream()
-				.map(response -> new Rating(response.getSource(), response.getValue()))
+				.map(Rating::from)
 				.collect(Collectors.toList());
 	}
 }

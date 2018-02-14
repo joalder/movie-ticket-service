@@ -2,6 +2,8 @@ package com.zuehlke.movieticketservice.model;
 
 import java.util.Objects;
 
+import com.zuehlke.movieticketservice.service.RatingServiceResponse;
+
 public class Rating {
 	private final String source;
 	private final String value;
@@ -9,6 +11,10 @@ public class Rating {
 	public Rating(String source, String value) {
 		this.source = source;
 		this.value = value;
+	}
+
+	public static Rating from(RatingServiceResponse response){
+		return new Rating(response.getSource(), response.getValue());
 	}
 
 	public String getSource() {
@@ -34,7 +40,6 @@ public class Rating {
 
 	@Override
 	public int hashCode() {
-
 		return Objects.hash(source, value);
 	}
 }
